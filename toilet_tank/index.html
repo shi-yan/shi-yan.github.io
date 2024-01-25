@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>Shi&#x27;s blog: How I Fixed a Leaky Toilet and Unraveled the Mystery of Siphoning</title>
+    <meta name="title" content="How I Fixed a Leaky Toilet and Unraveled the Mystery of Siphoning">
+    <meta name="description" content="In this blog, I share my journey of fixing a persistent toilet leak and uncovering the secrets of siphoning.">
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shi-yan.github.io/toilet_tank">
+    <meta property="og:title" content="How I Fixed a Leaky Toilet and Unraveled the Mystery of Siphoning">
+    <meta property="og:description" content="In this blog, I share my journey of fixing a persistent toilet leak and uncovering the secrets of siphoning.">
+    <meta property="og:image" content="https://shi-yan.github.io/toilet_tank/thumb_toilet-fill-valve.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shi-yan.github.io/toilet_tank">
+    <meta property="twitter:title" content="How I Fixed a Leaky Toilet and Unraveled the Mystery of Siphoning">
+    <meta property="twitter:description" content="In this blog, I share my journey of fixing a persistent toilet leak and uncovering the secrets of siphoning.">
+    <meta property="twitter:image" content="https://shi-yan.github.io/toilet_tank/thumb_toilet-fill-valve.webp">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/dockerfile.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/default-dark.min.css"
+        integrity="sha512-EF2rc4QyBiRAGUMVm+EjFPBbdVGaN/pwZhtuKyrC/dM+hcwTxI5BsEDUkrMRI77z4VlDAt/qVopePXB5+ZZ8Gw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="
+        https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
+        "></script>
+    <link href="
+        https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
+        " rel="stylesheet" />
+</head>
+
+<body>
+    <div id="page">
+        <div id="header"><a class="icon" href="/">Shi&#x27;s blog</a> <a class="icon" href="https://github.com/shi-yan"><svg
+                    xmlns="http://www.w3.org/2000/svg" height="32" width="32" fill="#dadadb"
+                    viewBox="0 0 480 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z" />
+                </svg></a></div>
+        <div id="left"></div>
+        <div id="content">
+            <div id="title">How I Fixed a Leaky Toilet and Unraveled the Mystery of Siphoning</div>
+            <div id="meta"><svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
+                    viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z" />
+                </svg> 2023-09-3 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11"
+                    fill="#dadadb"
+                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M345 39.1L472.8 168.4c52.4 53 52.4 138.2 0 191.2L360.8 472.9c-9.3 9.4-24.5 9.5-33.9 .2s-9.5-24.5-.2-33.9L438.6 325.9c33.9-34.3 33.9-89.4 0-123.7L310.9 72.9c-9.3-9.4-9.2-24.6 .2-33.9s24.6-9.2 33.9 .2zM0 229.5V80C0 53.5 21.5 32 48 32H197.5c17 0 33.3 6.7 45.3 18.7l168 168c25 25 25 65.5 0 90.5L277.3 442.7c-25 25-65.5 25-90.5 0l-168-168C6.7 262.7 0 246.5 0 229.5zM144 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" />
+                </svg>
+                #home improvement,
+                #toilet leak,
+                <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11" fill="#dadadb"
+                    viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
+                </svg>
+                821 Words
+                <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11" fill="#dadadb"
+                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
+                </svg>
+                3 Mins
+            </div>
+            <article id="post"><p>I feel like I should write a blog post about how toilets actually work and my recent adventure fixing a leak caused by siphoning.</p><p>Moving into my new place, I couldn't help but notice the toilet was running, you know, that constant water trickling sound? It's a pretty common problem, and I've tackled it in the past. Usually, it's just a worn-out rubber flapper – an easy fix that costs about seven bucks. But this time, in my recent move, that trick didn't work. The issue just wouldn't go away.</p><p>The constant water running drove me crazy, especially at night when that dripping noise seemed to echo through the house. Every now and then, I'd hear the water pump kick in, refilling the tank. Luckily, I never found water all over the bathroom floor, so it seemed like the leak was confined to the bowl.</p><p>Another usual suspect here is a worn-out gasket on the flush valve or even a crack in that overflow tube. The catch? Fixing those would be a real pain, involving taking apart the whole tank. To stop the ongoing leak, I did the simplest thing – shut off the water supply. But here's the kicker: the water level dropped, yet the tank didn't empty completely. So, it couldn't just be a worn gasket, but I was left scratching my head.</p><p>Fortunately, once I described the symptoms in detail to google, I figured out the culprit – 'siphoning.' So, I hit up YouTube with 'toilet siphoning' as the keywords, and there it was – the video that had all the answers.</p><iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/ZnsS8Vb12aI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>In that video, they showed this thing called the 'refill tube.' It's basically a water pipe that you stick into another pipe known as the 'overflow pipe.' Now, here's where it gets tricky: if you jam that refill tube too far into the overflow pipe and its opening dips below the water level in a full tank, bingo, you've got siphoning. So, the fix? It's a piece of cake – just trim that refill tube or give it a little tug so that its opening always stays above the water level in a full tank.</p><p>I couldn't wrap my head around how simple the fix was. I was still scratching my head about how the toilet tank actually worked. Why in the world would shoving that refill tube too far into the overflow pipe cause siphoning? And seriously, why the refill tube needs to be shoved into the overflow pipe in the first place?</p><p>After looking at numerous toilet tank diagrams, I finally figured it out. However, as is often the case with engineering, the reason can always be bad naming.</p><p><div class="img-container"><img class="img" onclick="openImage(this)" src="thumb_toilet-fill-valve.webp" original_src="toilet-fill-valve.webp" alt="Inside a toilet tank" /><div class="img-title">Inside a toilet tank</div></div></p><p>The refill tube is actually part of the refill valve, which is hooked up to the water supply. Here's how it rolls: after you flush the toilet and the water level takes a nosedive, the refill valve kicks into gear, popping open to start refilling the tank.</p><p>Now, inside the tank, there's this other tube-like thingy called the overflow tube. It's hollow and links up with the bowl. If you over-fill the tank and the water level ends up higher than the overflow tube's opening, that overflow tube becomes drainpipe, guiding water into the bowl to prevent any bathroom flooding chaos.</p><p>So, why do they stick the refill tube into the overflow tube? I mean, they call it the "refill" tube, but they never really specify what it's refilling. To a rookie toilet engineer like me, it seemed like the tank was the only thing that needed a refill. How on earth could a tube connected to the overflow tube, which goes straight to the bowl, possibly have anything to do with refilling the tank?</p><p>My initial not-so-bright idea was that there's some fancy contraption in the overflow tube that switches the water flow between the tank and the bowl. But, honestly, that sounded like a needlessly complicated setup to me.</p><p>So, get this: the refill tube isn't about topping off the tank; it's all about making sure the bowl maintains its water level. You see, the refill valve has a sneaky second opening for pumping fresh water into the tank (fill ports). The whole deal with the refill tube is to keep the bowl's water level just right. Without it, every flush would leave the bowl's water level lower than when it started. That's why they hook up the refill tube to the overflow tube and the bowl.</p><p><div class="img-container"><img class="img" onclick="openImage(this)" src="thumb_1200px-Lappo.png" original_src="1200px-Lappo.png" alt="Siphoning principle" /><div class="img-title">Siphoning principle</div></div></p><p>That explains the siphoning issue. When the tank is all filled up and you jam that refill tube too far into the overflow tube, its opening can end up below the water level. That's the perfect recipe for siphoning, sucking water from the tank into the overflow tube. That's why you hear that annoying dripping sound. And as the leaks keep adding up, the water level gets too darn low, setting off yet another tank refill.</p></article>
+            <div class="older_newer_link_section">
+                <div class="older_newer_link_left">
+                    <p>
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                        </svg>
+                        PREV POST
+
+
+                    </p>
+                    <p>
+                        <a class="older_newer_link" href="/how_to_implement_key_agreement_using_ring">How to Implement Key Agreement Using Ring</a>
+                    </p>
+                </div>
+
+                <div class="older_newer_link_right">
+                    <p>
+                        NEXT POST
+                        <svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                        </svg>
+                    </p>
+                    <p>
+                        <a class="older_newer_link" href="/diffusion_models_the_forward_pass">Diffusion Models: the forward pass</a>
+                    </p>
+                </div>
+            </div>
+            <a href="https://github.com/shi-yan/shi-yan.github.io/discussions" target="_blank" class="comment"><svg style="margin-right:10px;vertical-align: middle;"
+                    xmlns="http://www.w3.org/2000/svg" height="32" width="32" fill="#dadadb"
+                    viewBox="0 0 480 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z" />
+                </svg> Leave a Comment on Github</a>
+        </div>
+        <div id="right"></div>
+        <div id="footer">Generated by QuipQuick @ 2024-01-24 19:52:14</div>
+        <!-- The Modal -->
+        <div id="img-modal" class="modal">
+            <!-- The Close Button -->
+            <span class="close" id="img-close">&times;</span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        <script>
+            function openImage(img) {
+                var modal = document.getElementById("img-modal");
+                var modalImg = document.getElementById("img01");
+                modal.style.display = "block";
+                if (img.getAttribute("original_src")) {
+                    modalImg.src = img.getAttribute("original_src");
+                } else {
+                    modalImg.src = img.src;
+                }
+                var captionText = document.getElementById("caption");
+                captionText.innerText = img.alt;
+            }
+            // Get the <span> element that closes the modal
+            var closeButton = document.getElementById("img-close");
+
+            // When the user clicks on <span> (x), close the modal
+            closeButton.onclick = function () {
+                var modal = document.getElementById("img-modal");
+                modal.style.display = "none";
+            }
+        </script>
+        <script type="module">
+            const macros = {};
+            const mathElementsBlock = document.getElementsByClassName("math-block");
+            for (let element of mathElementsBlock) {
+                element.parentElement.classList.toggle("katex-display")
+                katex.render(element.textContent, element, {
+                    throwOnError: false,
+                    macros
+                });
+            }
+
+            const mathElementsInline = document.getElementsByClassName("math-inline");
+            for (let element of mathElementsInline) {
+                katex.render(element.textContent, element, {
+                    throwOnError: false,
+                    macros
+                });
+            }
+
+            hljs.highlightAll();
+
+        </script>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', '');
+</script>
+    </div>
+</body>
+
+</html>

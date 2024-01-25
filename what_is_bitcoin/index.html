@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>Shi&#x27;s blog: What is Bitcoin?</title>
+    <meta name="title" content="What is Bitcoin?">
+    <meta name="description" content="I aim to explain what Bitcoin and blockchain are and share my personal views on them.">
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shi-yan.github.io/what_is_bitcoin">
+    <meta property="og:title" content="What is Bitcoin?">
+    <meta property="og:description" content="I aim to explain what Bitcoin and blockchain are and share my personal views on them.">
+    <meta property="og:image" content="https://shi-yan.github.io/326807.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shi-yan.github.io/what_is_bitcoin">
+    <meta property="twitter:title" content="What is Bitcoin?">
+    <meta property="twitter:description" content="I aim to explain what Bitcoin and blockchain are and share my personal views on them.">
+    <meta property="twitter:image" content="https://shi-yan.github.io/326807.jpeg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/dockerfile.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/default-dark.min.css"
+        integrity="sha512-EF2rc4QyBiRAGUMVm+EjFPBbdVGaN/pwZhtuKyrC/dM+hcwTxI5BsEDUkrMRI77z4VlDAt/qVopePXB5+ZZ8Gw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="
+        https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
+        "></script>
+    <link href="
+        https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
+        " rel="stylesheet" />
+</head>
+
+<body>
+    <div id="page">
+        <div id="header"><a class="icon" href="/">Shi&#x27;s blog</a> <a class="icon" href="https://github.com/shi-yan"><svg
+                    xmlns="http://www.w3.org/2000/svg" height="32" width="32" fill="#dadadb"
+                    viewBox="0 0 480 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z" />
+                </svg></a></div>
+        <div id="left"></div>
+        <div id="content">
+            <div id="title">What is Bitcoin?</div>
+            <div id="meta"><svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
+                    viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z" />
+                </svg> 2023-04-22 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11"
+                    fill="#dadadb"
+                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M345 39.1L472.8 168.4c52.4 53 52.4 138.2 0 191.2L360.8 472.9c-9.3 9.4-24.5 9.5-33.9 .2s-9.5-24.5-.2-33.9L438.6 325.9c33.9-34.3 33.9-89.4 0-123.7L310.9 72.9c-9.3-9.4-9.2-24.6 .2-33.9s24.6-9.2 33.9 .2zM0 229.5V80C0 53.5 21.5 32 48 32H197.5c17 0 33.3 6.7 45.3 18.7l168 168c25 25 25 65.5 0 90.5L277.3 442.7c-25 25-65.5 25-90.5 0l-168-168C6.7 262.7 0 246.5 0 229.5zM144 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" />
+                </svg>
+                #blockchain,
+                #crypto,
+                #bitcoin,
+                <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11" fill="#dadadb"
+                    viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
+                </svg>
+                2347 Words
+                <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11" fill="#dadadb"
+                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
+                </svg>
+                9 Mins
+            </div>
+            <article id="post"><p>In this post, I aim to explain what Bitcoin and blockchain are. Although cryptocurrency is no longer a new topic, I feel the need to discuss it because a friend recently shared a YouTube video from a well-known influencer who advocates Web3 and refers to it as the greatest invention. While I hold a different opinion, I want to focus on what Bitcoin is and how it functions. I may write additional posts on this subject, including one on Ethereum, the second-generation blockchain and share my personal views on them.</p><p>I first heard about Bitcoin and attempted to mine it before many other crypto investors. This goes back to 2011 when I was still in school. A lab mate introduced me to it, and we ran a Bitcoin mining program on the lab computer overnight. The following day, we returned to find some unfamiliar digits on the screen. We were unable to comprehend what it meant and grew bored, ending our mining activity. My comprehension of digital currency was then rudimentary, and I struggled to comprehend how it could avoid unchecked duplication without a central issuer. Despite my curiosity, I lacked the drive to investigate further.</p><p>In 2013, I vividly remember my surprise when the price of Bitcoin surged to $130. This prompted me to investigate why it was worth so much, and I spent that night reading the white paper. I was completely astonished by the author's ability to establish order in what appeared to be a disorderly system and create a foolproof system that prevented loopholes and tolerated misbehavior. For about a year, I was captivated by blockchain and read extensively on the subject. However, ultimately, I concluded that while blockchain was innovative and introduced me to the concept of distributed computing, the $130 price point was still too high for what it offered. As a result, I never invested in cryptocurrency. In hindsight, some may argue that I missed out on a great opportunity. However, I do not believe that my judgment was incorrect. The market is far from rational, and I was not bold enough to participate in the greater fool's game.</p><p>Due to my enthusiasm for blockchain, many individuals have approached me seeking an explanation of its inner workings. As most of them lacked a technical background, I endeavored to convey the information in a simplified manner. The more I did this, the clearer my own understanding became. Therefore, I wish to document my method of explanation in the hope that it will benefit others who are curious about blockchain.</p><p>Before diving into the topic of Bitcoin, it is crucial to understand the essence of money. Intuitively, we often associate money with valuable objects, assuming that the value of money is inherently contained in the objects themselves. The image of golden coins is deeply ingrained in our minds, leading us to believe that these coins are valuable solely due to their gold content. However, this practice changed several hundred years ago when people began using paper money.</p><p>Have you ever pondered why a $100 bill holds so much purchasing power despite being made primarily of paper, which is not nearly as valuable? It is interesting to note that everyone believes that paper currency holds significant buying power. This is a widely accepted notion among trading partners, who see the exchange of goods for paper money as a mutually beneficial trade.</p><p>Money is simply a tool for documenting value, and its inherent worth is not connected to the material it is made of. A $1 coin and a $1 bill hold the same value, regardless of their composition. Historically, people used valuable objects as money because they ensured the authenticity of the document. If money is too easy to obtain, it becomes too simple to fabricate.</p><p>For instance, let's consider a situation where you and I are the only two individuals on the planet. We don't require money to exchange goods, and we can practice barter. Let's say I repaired your roof and expect 10 eggs in return. There is no currency involved in the process. The problem arises when I am unable to consume the eggs promptly, and they begin to spoil, causing me to incur a loss. In this case, I would prefer it if you paid me gradually, one egg at a time. We can document the transaction in a notebook, and you can cross off an egg every time you give one to me.</p><p>However, updating the document can become tedious if we have to do this frequently. A solution to this is to write notes with "owe one egg" in advance and provide me with ten of these notes as payment for the roof repair. When I need an egg, I return one note to you. You can confirm the note's authenticity by recognizing your handwriting, and these egg notes are essentially our currency.</p><p>The convenience of using "egg notes" as currency becomes even more apparent when more traders are involved. In this scenario, if I don't need eggs, I can use your notes to exchange for milk from someone else. They can then use the notes to trade for eggs with you, or pass them on to a fourth person in exchange for something else. Through this example, it becomes clear that the essence of money is simply a document representing value or effort. Interestingly, this concept is not new. In the US, we refer to paper money as bills, while in the UK it is called notes. Both terms refer to financial documents that are not so different from our "egg notes".</p><p>If we agree that money is a document for value, it doesn't have to be inherently valuable but it does have to be difficult to fabricate, what else could we use as money? Let's imagine we live in a small, undeveloped community on a barren island with no precious metals, natural resources, or even sea shells. Could we use stars as our currency? At first, this may sound absurd, but upon further examination, stars meet all the criteria for being money. They are scarce and impossible to fabricate.</p><p>Granted, we can't put stars in our pockets, but that doesn't matter as we can establish the concept of star ownership. When we trade, we are essentially exchanging star ownership. For example, let's assume I "own" the star <a class="link" href="https://en.wikipedia.org/wiki/Proxima_Centauri" target="_blank">Proxima Centauri</a>. When I need to buy 10 eggs from you, I can transfer the ownership of the star to you. For a small community, this transfer process can be as simple as an announcement in the village or documenting it in a notebook. However, for a larger community, this could become inconvenient. In that case, we could consider issuing a star ownership certificate which essentially represents the ownership of the star and can be traded.</p><p>Although this idea may seem unusual, it has actually been put into practice before by the Yapese people living on the Yap islands in Micronesia. On the island, the locals carved large <a class="link" href="https://www.bbc.com/travel/article/20180502-the-tiny-island-with-human-sized-money" target="_blank">stone coins</a> out of limestone, which were used as a form of currency. The ownership of these stones was established based on their history, as recorded in oral tradition, rather than their physical location. To transfer ownership, one would simply append the transfer to the oral history of the stone, thereby effecting a change in ownership.</p><p>The Yap stone money is a fascinating real-life analogy to cryptocurrency. In the world of Bitcoin, each participant maintains a notebook containing a record of all transactions since the beginning of Bitcoin. While this would be inefficient in real-life, cheap storage and fast internet make this feasible. The act of recording transactions, rather than just account balances, shares some roots with <a class="link" href="https://en.wikipedia.org/wiki/Double-entry_bookkeeping" target="_blank">Double-entry bookkeeping</a>, which is commonly used in accounting. This approach has several benefits, such as ensuring that all money added to an account comes from another account, preventing fraudulent activities that could lead to mismatched account balances. Moreover, recording all historical data enables tracking and makes the history data appendable but not mutable, leaving no room for forgery. However, the downside is that calculating an account's balance requires looking back at all historical transactions involving that account, which is too tedious to do in real-life, but not a big deal for computers.</p><p>In the world of Bitcoin, the ownership of Bitcoins does not involve physical possession of any object; rather, it is simply a number attached to an account. Unlike transactions in the real world, Bitcoin transactions are public, and all participants must be informed and asked to add the transaction to their ledgers. Due to the slow speed of the internet, participants cannot update their ledgers simultaneously, and the process can take some time. However, a threshold can be set, such as when more than 50% of the population has updated their ledgers, the transaction can be considered complete. It's important to note that participants will not blindly accept ledger updates. Instead, they will perform verifications to ensure that the transaction is legitimate and that you have sufficient funds in your account.</p><p>But the system relies on the assumption that all participants are trustworthy. However, if some users engage in misbehavior, the system can fail due to a loophole called double-spending. For instance, a user with only 5 Bitcoins in their account could initiate two simultaneous transactions of 5 Bitcoins to two different accounts. Since the user only has 5 Bitcoins, one of the two transactions should be invalid, but the decision of which one is invalid depends on the order in which the transactions are processed. The user could deliberately tell one group of users that transaction A occurred before transaction B, and tell another group the opposite, leading to a disagreement on the validity of the transactions. This disagreement could prevent the system from settling on the transactions, causing the collapse of the entire Bitcoin network.</p><p>In the real world, this problem could be solved by introducing a central authority or a judge. However, relying on a single point of failure could be risky since corruption or failure of the judge would result in the failure of the entire system. Another approach is to distribute the risk by dividing time into smaller segments, say, 10 minutes each. For each time segment, a different participant could be selected as the judge. This way, the risk of a judge failing during a short period of time is low. Moreover, judges have limited power and cannot engage in fraudulent activities since their only responsibility is to determine the order of transactions during their assigned time segment. They cannot change other people's transactions or create fake ones, as all transactions are cross-verified by everyone else. A fraudulent transaction would be easily detected by an algorithm and result in the loss of the judge's authority.</p><p>In order to select a judge fairly, the Bitcoin system uses a smart lottery system that ensures a wide distribution of judges. Each participant in the system races to draw a unique lucky number, which is guaranteed by computer algorithms to prevent forgery. The lucky number is different for each participant, making it impossible to copy others.</p><p>The first user to draw a lucky number within a 10-minute time frame becomes the judge for that period. They announce their lucky number to the world, and all other participants verify and acknowledge the judge's transaction proposals, and everyone writes them down on a new page of the ledger. Since the ledger is made up of interconnected blocks, it is commonly referred to as the blockchain.</p><p>To incentivize participation and ensure the system's security, the judge is awarded newly minted coins out of thin air. This is done by allowing the judge to add a transaction from nobody to their account with a fixed amount of money, called a mint transaction. Everyone who has independently verified the lucky number and the judge's transaction proposal acknowledges this mint transaction as legitimate.</p><p>This process of people racing to draw a lucky number and become a judge in order to earn rewards is known as Bitcoin mining. By making it difficult enough for two people to draw the same lucky number in the same 10-minute time frame, Bitcoin ensures a wide distribution of judges and creates a fair and secure system for generating new Bitcoins.</p><p>Before we wrap up our discussion on the Bitcoin blockchain, we need to address one more issue. While it's rare for two individuals to get a lucky number within a short time frame, it's not impossible. So, what happens if there are two judges at the same time? The world view regarding the transaction order will split, and there will be a momentary confusion as a portion of the network will believe one judge while the rest will believe the other.</p><p>However, this split isn't a big concern because it's unlikely to happen again in the next 10-minute time window. Eventually, one portion will find the next judge sooner than the other, and that portion will start a new round first. As a result, one blockchain will grow much longer than the other. The probability for both chains to grow at the same rate is very low, so we can consider it impossible. Therefore, the world view may be apart for a short time, but the situation won't last long. Soon, one view will become dominant because it develops faster than the other, and the slower branch can be safely abandoned. This is why settling a Bitcoin transaction may take some time to ensure that any issues like this can be resolved with time.</p><p>I hope you found my post easy to understand as I tried to simplify the concepts and draw connections to real-life examples. In my next post, I will delve deeper into some of the surrounding concepts and technical details, such as mining pools and microtransactions. Moreover, I will cover the inner workings of Ethereum and smart contracts. Lastly, I will share my personal view on blockchain and cryptocurrency and explain why I don't consider them to be worth investing in at current market prices.</p></article>
+            <div class="older_newer_link_section">
+                <div class="older_newer_link_left">
+                    <p>
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                        </svg>
+                        PREV POST
+
+
+                    </p>
+                    <p>
+                        <a class="older_newer_link" href="/my_gen_ai_aha_moments">My Gen AI Aha Moments</a>
+                    </p>
+                </div>
+
+                <div class="older_newer_link_right">
+                    <p>
+                        NEXT POST
+                        <svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                        </svg>
+                    </p>
+                    <p>
+                        <a class="older_newer_link" href="/share_host_user_with_containers">Using Docker to Create Matching Development Environments: A Trick for Sharing Host User Accounts with Containers</a>
+                    </p>
+                </div>
+            </div>
+            <a href="https://github.com/shi-yan/shi-yan.github.io/discussions" target="_blank" class="comment"><svg style="margin-right:10px;vertical-align: middle;"
+                    xmlns="http://www.w3.org/2000/svg" height="32" width="32" fill="#dadadb"
+                    viewBox="0 0 480 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z" />
+                </svg> Leave a Comment on Github</a>
+        </div>
+        <div id="right"></div>
+        <div id="footer">Generated by QuipQuick @ 2024-01-24 19:52:14</div>
+        <!-- The Modal -->
+        <div id="img-modal" class="modal">
+            <!-- The Close Button -->
+            <span class="close" id="img-close">&times;</span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        <script>
+            function openImage(img) {
+                var modal = document.getElementById("img-modal");
+                var modalImg = document.getElementById("img01");
+                modal.style.display = "block";
+                if (img.getAttribute("original_src")) {
+                    modalImg.src = img.getAttribute("original_src");
+                } else {
+                    modalImg.src = img.src;
+                }
+                var captionText = document.getElementById("caption");
+                captionText.innerText = img.alt;
+            }
+            // Get the <span> element that closes the modal
+            var closeButton = document.getElementById("img-close");
+
+            // When the user clicks on <span> (x), close the modal
+            closeButton.onclick = function () {
+                var modal = document.getElementById("img-modal");
+                modal.style.display = "none";
+            }
+        </script>
+        <script type="module">
+            const macros = {};
+            const mathElementsBlock = document.getElementsByClassName("math-block");
+            for (let element of mathElementsBlock) {
+                element.parentElement.classList.toggle("katex-display")
+                katex.render(element.textContent, element, {
+                    throwOnError: false,
+                    macros
+                });
+            }
+
+            const mathElementsInline = document.getElementsByClassName("math-inline");
+            for (let element of mathElementsInline) {
+                katex.render(element.textContent, element, {
+                    throwOnError: false,
+                    macros
+                });
+            }
+
+            hljs.highlightAll();
+
+        </script>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', '');
+</script>
+    </div>
+</body>
+
+</html>
