@@ -135,7 +135,7 @@ body {
 
 .content-item a {
     text-decoration: none;
-    color: #876fd6;
+    color: #dadadb;
 }
 
 .content-item-description {
@@ -211,6 +211,11 @@ article p {
     font-size: 1em;
     line-height: calc(1ex / 0.32);
     margin: calc(1ex / 0.32) 0;
+}
+
+article a {
+    color: #876fd6;
+    text-decoration: none;
 }
 
 blockquote {
