@@ -79,7 +79,7 @@
                     <path
                         d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
                 </svg>
-                1 Mins
+                1 Min
             </div>
             <article id="post"><p>Key agreement protocols provide a secure way for two parties to share a secret without the need to transmit an encryption key. Instead, the encryption key can be derived by the receiver using their private key and the sender's public key.</p><p>By ensuring that no man-in-the-middle has access to the receiver's private key, the shared secret remains resistant to interception.</p><p>The process of sharing a secret between parties A and B using this scheme can be described as follows:</p><ol><li><p>Both Alice (the sender) and Bob (the receiver) possess a keypair.</p></li><li><p>Alice derives a shared key_s by combining her private key_a with Bob's public key_b. This process is known as key agreement.</p></li><li><p>Alice encrypts the secret using the derived key_s.</p></li><li><p>Alice sends the encrypted secret to Bob, without needing to transmit the shared key_s.</p></li><li><p>Bob receives the encrypted secret and derives the same key_s using his private key_b and Alice's public key_a.</p></li><li><p>Bob decrypts the secret using the derived key_s.</p></li></ol><p>To implement this scheme in Rust using the <a class="link" href="https://github.com/briansmith/ring" target="_blank">Ring cryptography library</a>:</p><ol><li><p>Generate Alice's keypair</p></li></ol><pre><code class="language-rust code-block">let rng = rand::SystemRandom::new();
 
