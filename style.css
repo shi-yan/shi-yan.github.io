@@ -63,7 +63,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     font-style: italic;
-    color: rgb(186, 186, 186);
+    color: #876fd6;
 }
 
 .video {
@@ -211,11 +211,6 @@ article p {
     font-size: 1em;
     line-height: calc(1ex / 0.32);
     margin: calc(1ex / 0.32) 0;
-}
-
-article a {
-    color: #876fd6;
-    text-decoration: none;
 }
 
 blockquote {
