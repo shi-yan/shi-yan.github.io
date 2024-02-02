@@ -16,7 +16,7 @@ body {
     width: 100%;
     min-height: 100%;
     display: grid;
-    grid-template-columns: auto 800px auto;
+    grid-template-columns: 1fr fit-content(800px) 1fr;
     grid-template-rows: 62px auto 80px;
     grid-template-areas:
         "header header header"
