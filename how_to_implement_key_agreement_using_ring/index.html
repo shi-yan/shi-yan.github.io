@@ -24,6 +24,15 @@
     <meta property="twitter:description" content="A simple tutorial distilling key agreement using Ring in Rust.">
     <meta property="twitter:image" content="https://shi-yan.github.io/326807.jpeg">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"></script>
+ 
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/default-dark.min.css"
+        integrity="sha512-EF2rc4QyBiRAGUMVm+EjFPBbdVGaN/pwZhtuKyrC/dM+hcwTxI5BsEDUkrMRI77z4VlDAt/qVopePXB5+ZZ8Gw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="/style.css">
 
@@ -195,6 +204,7 @@ let alice_public_key = my_private_key.compute_public_key().unwrap();</code></pre
                 });
             }
             
+            hljs.highlightAll();
 
             async function setBuildTime() {
                 let response = await fetch("/current_time.txt");
