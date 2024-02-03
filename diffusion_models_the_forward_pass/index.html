@@ -24,16 +24,6 @@
     <meta property="twitter:description" content="A visual explanation of the forward pass of diffusion models.">
     <meta property="twitter:image" content="https://shi-yan.github.io/diffusion_models_the_forward_pass/thumb_diffusion_standard_gaussian.png">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/dockerfile.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/default-dark.min.css"
-        integrity="sha512-EF2rc4QyBiRAGUMVm+EjFPBbdVGaN/pwZhtuKyrC/dM+hcwTxI5BsEDUkrMRI77z4VlDAt/qVopePXB5+ZZ8Gw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="/style.css">
 
@@ -186,8 +176,7 @@ B &= \sqrt{1 - \beta}
                     macros
                 });
             }
-
-            hljs.highlightAll();
+            
 
             async function setBuildTime() {
                 let response = await fetch("/current_time.txt");
