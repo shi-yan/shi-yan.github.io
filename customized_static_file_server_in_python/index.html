@@ -6,28 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!-- Primary Meta Tags -->
-    <title>Shi&#x27;s blog: Using Docker to Create Matching Development Environments: A Trick for Sharing Host User Accounts with Containers</title>
-    <meta name="title" content="Using Docker to Create Matching Development Environments: A Trick for Sharing Host User Accounts with Containers">
-    <meta name="description" content="The post introduces a Docker trick that allows you to use the same host user in the container, which is useful for working with different machine learning repositories that have different requirements.">
+    <title>Shi&#x27;s blog: Customized Static File Server in Python</title>
+    <meta name="title" content="Customized Static File Server in Python">
+    <meta name="description" content="A customized static file server that supports headers implemented in python.">
   
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://shi-yan.github.io/share_host_user_with_containers">
-    <meta property="og:title" content="Using Docker to Create Matching Development Environments: A Trick for Sharing Host User Accounts with Containers">
-    <meta property="og:description" content="The post introduces a Docker trick that allows you to use the same host user in the container, which is useful for working with different machine learning repositories that have different requirements.">
+    <meta property="og:url" content="https://shi-yan.github.io/customized_static_file_server_in_python">
+    <meta property="og:title" content="Customized Static File Server in Python">
+    <meta property="og:description" content="A customized static file server that supports headers implemented in python.">
     <meta property="og:image" content="https://shi-yan.github.io/326807.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://shi-yan.github.io/share_host_user_with_containers">
-    <meta property="twitter:title" content="Using Docker to Create Matching Development Environments: A Trick for Sharing Host User Accounts with Containers">
-    <meta property="twitter:description" content="The post introduces a Docker trick that allows you to use the same host user in the container, which is useful for working with different machine learning repositories that have different requirements.">
+    <meta property="twitter:url" content="https://shi-yan.github.io/customized_static_file_server_in_python">
+    <meta property="twitter:title" content="Customized Static File Server in Python">
+    <meta property="twitter:description" content="A customized static file server that supports headers implemented in python.">
     <meta property="twitter:image" content="https://shi-yan.github.io/326807.jpeg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/dockerfile.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
  
 
     <link rel="stylesheet"
@@ -55,69 +55,76 @@
                 </svg></a></div>
         <div id="left"></div>
         <div id="content">
-            <div id="title">Using Docker to Create Matching Development Environments: A Trick for Sharing Host User Accounts with Containers</div>
+            <div id="title">Customized Static File Server in Python</div>
             <div id="meta"><svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
                     viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z" />
-                </svg> 2023-05-08 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11"
+                </svg> 2024-02-12 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11"
                     fill="#dadadb"
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M345 39.1L472.8 168.4c52.4 53 52.4 138.2 0 191.2L360.8 472.9c-9.3 9.4-24.5 9.5-33.9 .2s-9.5-24.5-.2-33.9L438.6 325.9c33.9-34.3 33.9-89.4 0-123.7L310.9 72.9c-9.3-9.4-9.2-24.6 .2-33.9s24.6-9.2 33.9 .2zM0 229.5V80C0 53.5 21.5 32 48 32H197.5c17 0 33.3 6.7 45.3 18.7l168 168c25 25 25 65.5 0 90.5L277.3 442.7c-25 25-65.5 25-90.5 0l-168-168C6.7 262.7 0 246.5 0 229.5zM144 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" />
                 </svg>
-                <a class="tag" href="/tags/docker">#docker</a>,
-                <a class="tag" href="/tags/linux">#linux</a>,
+                <a class="tag" href="/tags/web-server">#web server</a>,
+                <a class="tag" href="/tags/web-dev">#web dev</a>,
                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11" fill="#dadadb"
                     viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
                 </svg>
-                591 Words
+                83 Words
                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11" fill="#dadadb"
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
                 </svg>
-                2 Mins
+                0 Min
             </div>
-            <article id="post"><p>At our workplace, Docker is primarily used to create matching development environments. Since we work with various machine learning repositories that have different requirements for CUDA, PyTorch, and Python, it becomes challenging to accommodate all the requirements on the native environment. Therefore, we use Docker containers as the easiest way to meet these diverse needs. However, this also comes with an annoying issue where sharing the host user account with the container environment is not straightforward. As a result, any shared host file, once modified by the container using the root user, cannot be modified without <code>sudo</code> on the host.</p><p>We need to update files across the container boundry because the host environment typically has better IDEs like VSCode. Therefore, we prefer modifying files on the host, but build and run our projects in a container. However, when a script or command is executed within the container and modifies a mounted file, the file becomes unsavable on the host unless we reopen it with sudo privilege.</p><p>A common solution on the internet for this problem is mounting the relevant files and the host user ID. For example:</p><pre><code class="language-bash code-block">docker run --gpus all -it \
-    --workdir="/home/$USER" \
-    -v="/etc/group:/etc/group:ro" \
-    -v="/etc/passwd:/etc/passwd:ro" \
-    -v="/etc/shadow:/etc/shadow:ro" \
-    -v="/etc/sudoers:/etc/sudoers:ro" \
-    -e="DISPLAY=$DISPLAY" \
-    -e "TERM=xterm-256color" \
-    -v="/tmp/.X11-unix:/tmp/.X11-unix" \
-    -v="/tmp/host_launcher_fifo:/tmp/host_launcher_fifo" \
-    -v /home/${USER}:/home/${USER} \
-    -u $(id -u ${USER}):$(id -g ${USER}) \
-    <docker_image></code></pre><p>The solution that maps the host user to a container is useful, but it comes with a significant drawback. When running any commands requiring sudo privilege, such as <code>sudo apt update</code>, it returns an incorrect password error. This is perplexing because the command line has already mounted both the <code>passwd</code> and <code>shadow</code> files, which should contain all the password information.</p><p>If I recall correctly, this solution worked for me a few years ago, but it has failed to work in recent years. I never felt motivated to resolve the issue until today when it became very annoying.</p><p>At first, I tried googling for a solution, but nobody seemed to report the same incorrect password issue. The above solution was deemed as the correct way to map a host user to a container.</p><p>While looking for solutions, I came across <a class="link" href="https://forums.docker.com/t/centos-7-docker-has-sudo-issue-keeps-on-saying-incorrect-sudo-password-on-fedora-35-host-works-on-fedora-34" target="_blank">a forum thread</a> that gave me an idea about the root cause of the problem. The thread's author encountered a similar issue when running a CentOS container on a Fedora host. The explanation given in the thread is that the two distros use different methods to hash passwords. Even if the <code>passwd</code> and <code>shadow</code> files are shared, the container can't create the same hash as the algorithms used are different. In my case, my host is Ubuntu 22.04, and my container is 18.04. I theorized that the root cause of my problem might be the same.</p><p>To verify this quickly, I created a container using Ubuntu 22.04 to match my host OS. As expected, the above solution worked without any issues. Based on this, I modified my solution. First, when creating the Dockerfile, we need to install the sudo tool, add a new user using the same host USER_ID and USERNAME, add the user to the sudo group, and <a class="link" href="https://askubuntu.com/questions/80444/how-to-set-user-passwords-using-passwd-without-a-prompt" target="_blank">set this user's password</a> to the same password used on the host:</p><pre><code class="language-dockerfile code-block">FROM <docker_base_image>
+            <article id="post"><p>Frequently, I find myself needing to launch a local static file server, primarily for debugging frontend code. The default choice is the command:</p><pre><code class="language-bash code-block">python3 -m http.server</code></pre><p>Since Python is widely deployed, there's no need for installation. However, this method lacks support for many configurations. Particularly, when encountering strict browser security rules, I often need to manipulate the response headers to bypass them. Unfortunately, the vanilla HTTP server doesn't provide this capability.</p><p>Here's my slightly modified version of the static file server that can inject custom headers:</p><pre><code class="language-python code-block">from http.server import HTTPServer, BaseHTTPRequestHandler
+from urllib.parse import urlparse
+import pathlib
+import mimetypes
 
-ARG USER_ID=1000
-ARG HOST_USER_PASSWD=111111
-ARG HOST_USERNAME=shiy
+cur = pathlib.Path().resolve()
 
-...
+print(cur)
 
-RUN useradd -l -u ${USER_ID} ${HOST_USERNAME}
-RUN usermod -a -G sudo ${HOST_USERNAME} && usermod --password $(echo ${HOST_USER_PASSWD} | openssl passwd -1 -stdin) ${HOST_USERNAME}
+extra_headers = [('Cross-Origin-Opener-Policy', 'same-origin'),
+                 ('Cross-Origin-Resource-Policy', 'same-site'),
+                 ('Cross-Origin-Embedder-Policy', 'require-corp')]
 
-USER ${HOST_USERNAME}
-WORKDIR /home/${HOST_USERNAME}
+class FileHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        parsed = urlparse(self.path)
+        query_string = parsed.query
+        path = cur.joinpath('.'+parsed.path)
+        type = mimetypes.guess_type(path.as_uri())
+        try:
+            file = open(path, "rb")
+        except FileNotFoundError:
+            self.send_response(404)
+            self.end_headers()
+            self.wfile.write(bytes("Not Found!", "utf-8"))
+            print(path, 'not found')
+        else:
+            with file:
+                self.send_response(200)
+                if type[0] != None:
+                    self.send_header('Content-Type', type[0])
+                if type[1] != None:
+                    self.send_header('Content-Encoding', type[1])
+                for extra_header in extra_headers:
+                    self.send_header(extra_header[0], extra_header[1])
+                
+                self.end_headers()
+                while (byte := file.read()):
+                    self.wfile.write(byte)
+                print('served', path)
+        
 
-RUN id ${HOST_USERNAME}
-</code></pre><p>To use the same host user in the container, we should set the USER_ID to be the same as the host user's ID, which can be obtained by running the <code>id -u</code> command. With this configuration, we don't need to map the <code>passwd</code> and <code>shadow</code> files to the container anymore, as the container can't understand them.</p><pre><code class="language-bash code-block">docker run --gpus all -it \
-    --workdir="/home/$USER" \
-    -e="DISPLAY=$DISPLAY" \
-    -e "TERM=xterm-256color" \
-    -v="/tmp/.X11-unix:/tmp/.X11-unix" \
-    -v="/tmp/host_launcher_fifo:/tmp/host_launcher_fifo" \
-    -v /home/$USER:/home/$USER \
-    --user=$(id -u):$(id -g)  \
-    --group-add="sudo" \
- <docker_image></code></pre><p>Instead, we can specify the current user with the <code>--user</code> argument and add the sudo group using the <code>--group-add</code> argument. This way, the container will use the same host user, and sudo will work as expected. Moreover, any files created within the container can be modified on the host as well.</p></article>
+httpd = HTTPServer(('localhost', 10000), FileHandler)
+httpd.serve_forever()</code></pre></article>
             <div class="older_newer_link_section">
                 <div class="older_newer_link_left">
                     <p>
@@ -133,23 +140,10 @@ RUN id ${HOST_USERNAME}
 
                     </p>
                     <p>
-                        <a class="older_newer_link" href="/what_is_bitcoin">What is Bitcoin?</a>
+                        <a class="older_newer_link" href="/how_to_remove_unused_headers">How to Remove Unused Headers</a>
                     </p>
                 </div>
 
-                <div class="older_newer_link_right">
-                    <p>
-                        NEXT POST
-                        <svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
-                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path
-                                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                        </svg>
-                    </p>
-                    <p>
-                        <a class="older_newer_link" href="/unveiling_hidden_scrollbar_margins">Streamlining CSS Debugging: Unveiling Hidden Scrollbar Margins</a>
-                    </p>
-                </div>
             </div>
             <a href="https://github.com/shi-yan/shi-yan.github.io/discussions" target="_blank" class="comment"><svg style="margin-right:10px;vertical-align: middle;"
                     xmlns="http://www.w3.org/2000/svg" height="32" width="32" fill="#dadadb"
