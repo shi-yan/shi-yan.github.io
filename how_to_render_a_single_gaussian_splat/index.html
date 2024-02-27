@@ -128,9 +128,9 @@ this.covariance = glMatrix.mat3.multiply(glMatrix.mat3.create(), T, T_transpose)
 \frac{d x_p}{d y_e} & \frac{d y_p}{d y_e} & \frac{d z_p}{d y_e}\\
 \frac{d x_p}{d z_e} & \frac{d y_p}{d z_e} & \frac{d z_p}{d z_e}\\
 \end{pmatrix}</code></p><p>Based on equation 4, we can calculate the Jacobian matrix as follows:</p><p class="katex-display-counter"><code class="language-math math-block">\begin{pmatrix}
-\frac{n}{z_e} & 0 & 0\\
-0 & \frac{n}{z_e} & 0\\
--\frac{x_e}{z_e^2} & -\frac{y_e}{z_e^2} & 0\\
+-\frac{n}{z_e} & 0 & 0\\
+0 & -\frac{n}{z_e} & 0\\
+\frac{x_e}{z_e^2} & \frac{y_e}{z_e^2} & 0\\
 \end{pmatrix}</code></p><p>The last column should not be all zeros, but in our <a class="link" href="https://github.com/mkkellogg/GaussianSplats3D" target="_blank">reference code</a>, the last column is indeed set to zeros. I believe the reason for this is that for the projection of Gaussians, we can effectively remove the depth information by assuming <code class="language-math math-inline">z_p</code> is a constant. This is because we do not need depth testing for Gaussians; instead, we will sort them from front to back and render them in that order.</p><p>Here is how the Jacobian matrix (in column-major order) is calculated in the code, based on the perspective projection matrix:</p><pre><code class="language-javascript code-block">const focal = {
     x: projectionMatrix[0] * devicePixelRatio * renderDimension.x * 0.5,
     y: projectionMatrix[5] * devicePixelRatio * renderDimension.y * 0.5
