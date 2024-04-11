@@ -6,26 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!-- Primary Meta Tags -->
-    <title>Shi&#x27;s blog: My Pandoc Setup for Technical Book</title>
-    <meta name="title" content="My Pandoc Setup for Technical Book" />
+    <title>Shi&#x27;s blog: My Pandoc Setup for My Technical Book</title>
+    <meta name="title" content="My Pandoc Setup for My Technical Book" />
     <meta name="description" content="Share my Pandoc setup for including code samples in my technical book." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://shi-yan.github.io/my_pandoc_setup_for_technical_book" />
-    <meta property="og:title" content="My Pandoc Setup for Technical Book" />
+    <meta property="og:title" content="My Pandoc Setup for My Technical Book" />
     <meta property="og:description" content="Share my Pandoc setup for including code samples in my technical book." />
-    <meta property="og:image" content="https://shi-yan.github.io/326807.jpeg" />
+    <meta property="og:image" content="https://shi-yan.github.io/my_pandoc_setup_for_technical_book/thumb_code_block.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://shi-yan.github.io/my_pandoc_setup_for_technical_book" />
-    <meta property="twitter:title" content="My Pandoc Setup for Technical Book" />
+    <meta property="twitter:title" content="My Pandoc Setup for My Technical Book" />
     <meta property="twitter:description" content="Share my Pandoc setup for including code samples in my technical book." />
-    <meta property="twitter:image" content="https://shi-yan.github.io/326807.jpeg" />
+    <meta property="twitter:image" content="https://shi-yan.github.io/my_pandoc_setup_for_technical_book/thumb_code_block.png" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/latex.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/markdown.min.js"></script>
 
@@ -65,7 +66,7 @@
         </div>
         <div id="left"></div>
         <div id="content">
-            <div id="title">My Pandoc Setup for Technical Book</div>
+            <div id="title">My Pandoc Setup for My Technical Book</div>
             <div id="meta"><svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
                     viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
@@ -83,19 +84,26 @@
                     <path
                         d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
                 </svg>
-                363 Words
+                601 Words
                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11" fill="#dadadb"
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
                 </svg>
-                1 Min
+                2 Mins
             </div>
-            <article id="post"><p>I'm working on a <a class="link" href="https://github.com/shi-yan/WebGPUUnleashed" target="_blank">technical book about WebGPU</a>, which I intend to self-publish as both a printed book and ebooks. I researched various approaches to creating it. Initially, I planned to use LaTeX with a suitable technical book template to generate a PDF. While a PDF might be ideal for a printed book, it is not a good ebook format, as it does not reflow its text based on screen size. Eventually, I settled on Pandoc, as it can generate PDFs and other digital formats from Markdown files. Additionally, if I later want to create other formats, such as a website, it will not be difficult, as Markdown is a universal format.</p><p>However, as I progressed with this book, I realized that a printed book falls behind digital formats when it comes to technical books. Firstly, many resources I want to reference are simply links and videos. For digital formats, embedding them is straightforward, but impossible for a printed book. Secondly, it's also challenging to include source code effectively. Pasting the full code will occupy too many pages, and most of it is boilerplate or initialization that is not crucial to the discussion. Pasting only the relevant parts may fragment the overall picture, as code is not organized linearly. To understand an implementation, we often need to jump between multiple functions and files, which is difficult to handle in a traditional book when the content is predominantly linear.</p><p>Moreover, there is an additional challenge: it's difficult to keep the actual sample code and the corresponding code snippets in the book in sync. Fortunately, I found a reasonable solution to remedy this problem.</p><p>I'm currently using the excellent Pandoc <a class="link" href="https://github.com/Wandmalfarbe/pandoc-latex-template" target="_blank">technical book template</a>. Out of box, this template supports code block with line number. It relies on the Listings package. This package supports some customization options. You can configure them in the <code>eisvogel.latex</code> file:</p><pre><code class="language-latex code-block">\usepackage{listings}
+            <article id="post"><p>I'm working on a <a class="link" href="https://github.com/shi-yan/WebGPUUnleashed" target="_blank">technical book about WebGPU</a>, which I intend to self-publish as both a printed book and ebooks. I researched various approaches to creating it. Initially, I planned to use LaTeX with a suitable technical book template to generate a PDF. While a PDF might be ideal for a printed book, it is not a good ebook format, as it does not reflow its text based on screen size. Eventually, I settled on Pandoc, as it can generate PDFs and other digital formats from Markdown files. Additionally, if I later want to create other formats, such as a website, it will not be difficult, as Markdown is a universal format.</p><p>However, as I progressed with this book, I realized that a printed book falls behind digital formats when it comes to technical books. Firstly, many resources I want to reference are simply links and videos. For digital formats, embedding them is straightforward, but impossible for a printed book. Secondly, it's also challenging to include source code effectively. Pasting the full code will occupy too many pages, and most of it is boilerplate or initialization that is not crucial to the discussion. Pasting only the relevant parts may fragment the overall picture, as code is not organized linearly. To understand an implementation, we often need to jump between multiple functions and files, which is difficult to handle in a traditional book when the content is predominantly linear.</p><p>Moreover, there is an additional challenge: it's difficult to keep the actual sample code and the corresponding code snippets in the book in sync. Fortunately, I found a reasonable solution to remedy this problem.</p><p>I'm currently using the excellent Pandoc <a class="link" href="https://github.com/Wandmalfarbe/pandoc-latex-template" target="_blank">technical book template</a>. Out of the box, this template supports code blocks with line numbers, relying on the Listings package. This package offers various customization options that can be configured in the eisvogel.latex file:</p><pre><code class="language-latex code-block">\usepackage{listings}
 \renewcommand{\lstlistingname}{Code Sample}
-\lstset{captionpos=b}</code></pre><p>For example, here I renamed the caption prefix from the default <code>Listing</code> to <code>Code Sample</code>. And I also position the caption under the code block, instead of above.</p><p>Further, Pandoc allows you to add more options, such as caption and the starting line number when defining code blocks in markdown. for example:</p><pre><code class="language-markdown code-block">  ```python {startFrom="1" caption="Tile preprocessor"}
-  import PIL.Image
-  ...</code></pre><pre><code></code></pre></article>
+\lstset{captionpos=b}</code></pre><p>For instance, here I've renamed the caption prefix from the default <code>Listing</code> to <code>Code Sample</code>, and positioned the caption below the code block instead of above.</p><p>Furthermore, Pandoc allows you to add more options, such as captions and the starting line number, when defining code blocks in Markdown. For example:</p><pre><code class="language-markdown code-block">\```python {startFrom="1" caption="Tile preprocessor"}
+import PIL.Image
+...
+\```</code></pre><p>This is a super useful feature, as it allows me to specify the precise line numbers as they appear in the source code. However, this approach presents a challenge - every time I update the code, both the line numbers and the code content may change. The question then becomes: how can I keep the code snippets referenced in the book in sync with the actual source code?</p><p>To solve this problem, I've introduced a custom code comment syntax that enables me to specify the code segments I want to reference in the book, along with a label:</p><pre><code class="language-javascript code-block">//cs_start: <code segment name>
+//cs_end: <code segment name></code></pre><p>I then implemented a preprocessor to parse all the source code files. During this process, I establish a database of code segments and their metadata, including line numbers. Each segment is indexed by its file path as well as the segment label.</p><p>In my Markdown files, instead of directly copying and pasting code from the source files, I define "dummy" code blocks that contain the necessary information to look up the relevant code segments in the database:</p><pre><code>\```yaml
+file: 5_04_mega_texture/preprocess.py
+id: mega_texture_preprocess
+title: Tile preprocessor
+lang: python
+\```</code></pre><p>The Markdown files are then processed by a preprocessor that replaces these dummy code blocks with the actual content retrieved from the database. This ensures that the code snippets in the book are always in sync with the source code.</p><p><div class="img-container"><img class="img" onclick="openImage(this)" src="thumb_code_block.png" original_src="code_block.png" alt="Code Block Example as Shown in My Book" sources='[]' /><div class="img-title">Code Block Example as Shown in My Book</div></div></p><p>With this approach, I'm able to maintain the precise line numbers for the code blocks, even as the underlying source code evolves over time.</p></article>
             <div class="older_newer_link_section">
                 <div class="older_newer_link_left">
                     <p>
