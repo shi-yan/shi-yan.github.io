@@ -6,22 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!-- Primary Meta Tags -->
-    <title>Shi&#x27;s blog: Note on Alpha Blending</title>
-    <meta name="title" content="Note on Alpha Blending" />
-    <meta name="description" content="Alpha blending is very confusing. I hope to use this note as a way to clarify my thoughts on the matter." />
+    <title>Shi&#x27;s blog: Launch WebGPU Unleashed</title>
+    <meta name="title" content="Launch WebGPU Unleashed" />
+    <meta name="description" content="My book on graphics programming using WebGPU" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://shi-yan.github.io/note_on_alpha_blending" />
-    <meta property="og:title" content="Note on Alpha Blending" />
-    <meta property="og:description" content="Alpha blending is very confusing. I hope to use this note as a way to clarify my thoughts on the matter." />
+    <meta property="og:url" content="https://shi-yan.github.io/launch_webgpu_unleashed" />
+    <meta property="og:title" content="Launch WebGPU Unleashed" />
+    <meta property="og:description" content="My book on graphics programming using WebGPU" />
     <meta property="og:image" content="https://shi-yan.github.io/326807.jpeg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://shi-yan.github.io/note_on_alpha_blending" />
-    <meta property="twitter:title" content="Note on Alpha Blending" />
-    <meta property="twitter:description" content="Alpha blending is very confusing. I hope to use this note as a way to clarify my thoughts on the matter." />
+    <meta property="twitter:url" content="https://shi-yan.github.io/launch_webgpu_unleashed" />
+    <meta property="twitter:title" content="Launch WebGPU Unleashed" />
+    <meta property="twitter:description" content="My book on graphics programming using WebGPU" />
     <meta property="twitter:image" content="https://shi-yan.github.io/326807.jpeg" />
 
 
@@ -55,42 +55,33 @@
         </div>
         <div id="left"></div>
         <div id="content">
-            <div id="title">Note on Alpha Blending</div>
+            <div id="title">Launch WebGPU Unleashed</div>
             <div id="meta"><svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
                     viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z" />
-                </svg> 2024-04-20 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11"
+                </svg> 2024-08-04 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11"
                     fill="#dadadb"
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M345 39.1L472.8 168.4c52.4 53 52.4 138.2 0 191.2L360.8 472.9c-9.3 9.4-24.5 9.5-33.9 .2s-9.5-24.5-.2-33.9L438.6 325.9c33.9-34.3 33.9-89.4 0-123.7L310.9 72.9c-9.3-9.4-9.2-24.6 .2-33.9s24.6-9.2 33.9 .2zM0 229.5V80C0 53.5 21.5 32 48 32H197.5c17 0 33.3 6.7 45.3 18.7l168 168c25 25 25 65.5 0 90.5L277.3 442.7c-25 25-65.5 25-90.5 0l-168-168C6.7 262.7 0 246.5 0 229.5zM144 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" />
                 </svg>
+                <a class="tag" href="/tags/webgpu">#webgpu</a>,
                 <a class="tag" href="/tags/computer-graphics">#computer graphics</a>,
-                <a class="tag" href="/tags/alpha-blending">#alpha blending</a>,
                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11" fill="#dadadb"
                     viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
                 </svg>
-                646 Words
+                81 Words
                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;" height="12" width="11" fill="#dadadb"
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
                         d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
                 </svg>
-                2 Mins
+                0 Min
             </div>
-            <article id="post"><p>I have worked in the field of computer graphics for many years, but I must admit, I found alpha blending and concepts like premultiplied alpha, back-to-front blending, and front-to-back blending confusing. While it's easy to find online resources that provide the formulas to use in different situations, truly understanding the underlying principles is crucial for handling more complex cases.</p><p>I want to express my gratitude to the book <a class="link" href="https://www.amazon.com/Advanced-Graphics-Programming-Kaufmann-Computer/dp/1558606599" target="_blank">Advanced Graphics Programming Using OpenGL</a>, which has a dedicated chapter that patiently explains how alpha blending works (starting from page 185).</p><p>My earlier confusion stemmed from conceptualizing alpha as opacity, similar to how we perceive transparency in real life. For example, imagining a semi-transparent red film, where red is the color and alpha represents the semi-transparency. This misconception made it difficult for me to grasp concepts like premultiplied alpha. In real life, an object's color is generally unrelated to its transparency – a very transparent red film should still appear red. However, in computer graphics, we have the concept of premultiplied alpha, where we multiply the alpha value with the color, causing a very transparent red to appear dark red or even black.</p><p>The correct way to conceptualize alpha is as the "amount of color" rather than opacity. In computer graphics, there is no true transparency; it's more akin to painting, where all pigments are fully opaque, differing only in color.</p><p>To create the illusion of semi-transparency, we must mix colors by taking a weighted average of existing colors, simulating the effect of light passing through multiple layers of color. When mixing colors, the only controllable factor is the amount of color, which corresponds to the alpha channel of an RGBA pixel.</p><p>Thus, the most basic form of alpha blending two colors is:</p><p class="katex-display-counter"><code class="language-math math-block">\begin{aligned}
-C_{new} &= C_{src} * A_{src} + C_{dst} * (1 - A_{src}) \\
-A_{new} &= 1.0
-\end{aligned}</code></p><p>This is a typical weighted average of two colors, assuming that both colors and the resulting color <code class="language-math math-inline">C_{new}</code> are fully opaque. Here, only <code class="language-math math-inline">C_{src}</code> has an alpha value and is used in the formula, while <code class="language-math math-inline">C_{dst}</code> and <code class="language-math math-inline">C_{new}</code> have an alpha of 1.0 (full amount). If <code class="language-math math-inline">C_{src}</code> is the foreground, we determine how much of the foreground we want to see using this formula, without any actual transparency involved.</p><p>We can view each pixel as a small color bucket, where the amount of color poured into a single bucket cannot exceed 1.0 (overflow).</p><p>In the scenario of mixing two colors, we can think of all pixel buckets initially containing the background color <code class="language-math math-inline">C_{dst}</code> at the full amount of 1.0. To make room for adding the foreground color of the amount <code class="language-math math-inline">A_{src}</code>, we need to pour out some existing color. To ensure the resulting bucket is still full, the amount to pour out should be <code class="language-math math-inline">1.0 - A_{src}</code>.</p><p>If we want to blend more than two colors additively, we need to adjust the formula because we cannot assume that the resulting color of each step has no alpha (always a full bucket).</p><p>As we pour colors additively into this bucket, we need to leave some room for incoming colors. This is why we need to keep track of the amount of color already present in the bucket.</p><p>Let's label the colors we want to blend as <code class="language-math math-inline">C_1</code>, <code class="language-math math-inline">C_2</code>, <code class="language-math math-inline">C_3</code>, and so on. The formula becomes:</p><p class="katex-display-counter"><code class="language-math math-block">\begin{aligned}
-C_{new} &= C_1 * A_1 + C_2 * A_2 * (1.0 - A_1) \\
-A_{new} &= A_1 + A_2 * (1.0 - A_1)
-\end{aligned}</code></p><p>The weighted average of the two colors is still the same, but we now multiply <code class="language-math math-inline">C_2</code> by its <code class="language-math math-inline">A_2</code> because <code class="language-math math-inline">C_2</code> is not a full bucket.</p><p>The new alpha formula, <code class="language-math math-inline">A_{new} = A_1 + A_2 * (1.0 - A_1)</code>, guarantees that the new alpha never exceeds 1.0, preventing overflow.</p><p>Now, looking at the common equations found online for front-to-back alpha blending, they may not seem to match the above equation at first glance. However, in reality, they are equivalent. First, since it's front-to-back alpha blending, the destination color is the foreground, and the source is the background. Second, the following formula uses <code class="language-math math-inline">A_dst</code> to store the <code class="language-math math-inline">(1.0 - A_1)</code> term from the above equation. If we substitute <code class="language-math math-inline">C_{src}</code> and <code class="language-math math-inline">A_{src}</code> with <code class="language-math math-inline">C_2</code> and <code class="language-math math-inline">A_2</code>, and <code class="language-math math-inline">C_{dst}</code> and <code class="language-math math-inline">A_{dst}</code> with <code class="language-math math-inline">C_1</code> and <code class="language-math math-inline">(1.0 - A_1)</code>, we should arrive at the same equation:</p><p class="katex-display-counter"><code class="language-math math-block">\begin{aligned}
-C_{dst} &= A_{dst} * (A_{src} * C_{src}) + C_{dst} \\
-A_{dst} &= (1 - A_{src}) * A_{dst}
-\end{aligned}</code></p></article>
+            <article id="post"><p>I am excited to announce the launch of my <a class="link" href="https://shi-yan.github.io/webgpuunleashed" target="_blank">e-book on Graphics/WebGPU programming</a>! This project has consumed much of my spare time, during which I developed various tools to facilitate the publishing process, including a code playground and a static site generator that can reference sample codes.</p><div style="width: 100%; min-width: 320px; max-width: 800px;"><div style="position: relative; width: 100%; overflow: hidden; padding-top: 56.25%;"><iframe class="video" src="https://www.youtube.com/embed/QUGcWsJCCmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div><p>However, I'm feeling burnt out and ready to call it finished, even though it may not feel completely done. Avoiding another abandoned side project has been my primary motivation in reaching this point.</p></article>
             <div class="older_newer_link_section">
                 <div class="older_newer_link_left">
                     <p>
@@ -106,23 +97,10 @@ A_{dst} &= (1 - A_{src}) * A_{dst}
 
                     </p>
                     <p>
-                        <a class="older_newer_link" href="/my_pandoc_setup_for_technical_book">My Pandoc Setup for My Technical Book</a>
+                        <a class="older_newer_link" href="/note_on_alpha_blending">Note on Alpha Blending</a>
                     </p>
                 </div>
 
-                <div class="older_newer_link_right">
-                    <p>
-                        NEXT POST
-                        <svg xmlns="http://www.w3.org/2000/svg" height="12" width="11" fill="#dadadb"
-                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path
-                                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                        </svg>
-                    </p>
-                    <p>
-                        <a class="older_newer_link" href="/launch_webgpu_unleashed">Launch WebGPU Unleashed</a>
-                    </p>
-                </div>
             </div>
             <a href="https://github.com/shi-yan/shi-yan.github.io/discussions" target="_blank" class="comment"><svg
                     style="margin-right:10px;vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" height="32"
