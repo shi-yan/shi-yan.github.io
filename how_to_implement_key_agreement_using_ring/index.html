@@ -92,31 +92,31 @@
             </div>
             <article id="post"><p>Key agreement protocols provide a secure way for two parties to share a secret without the need to transmit an encryption key. Instead, the encryption key can be derived by the receiver using their private key and the sender's public key.</p><p>By ensuring that no man-in-the-middle has access to the receiver's private key, the shared secret remains resistant to interception.</p><p>The process of sharing a secret between parties A and B using this scheme can be described as follows:</p><ol><li><p>Both Alice (the sender) and Bob (the receiver) possess a keypair.</p></li><li><p>Alice derives a shared key_s by combining her private key_a with Bob's public key_b. This process is known as key agreement.</p></li><li><p>Alice encrypts the secret using the derived key_s.</p></li><li><p>Alice sends the encrypted secret to Bob, without needing to transmit the shared key_s.</p></li><li><p>Bob receives the encrypted secret and derives the same key_s using his private key_b and Alice's public key_a.</p></li><li><p>Bob decrypts the secret using the derived key_s.</p></li></ol><p>To implement this scheme in Rust using the <a class="link" href="https://github.com/briansmith/ring" target="_blank">Ring cryptography library</a>:</p><ol><li><p>Generate Alice's keypair</p></li></ol><pre><code class="language-rust code-block">let rng = rand::SystemRandom::new();
 
-let alice_private_key = agreement::EphemeralPrivateKey::generate(&agreement::X25519, &rng).unwrap();
+let alice_private_key = agreement::EphemeralPrivateKey::generate(&amp;agreement::X25519, &amp;rng).unwrap();
 let alice_public_key = my_private_key.compute_public_key().unwrap();</code></pre><ol><li><p>Create a keypair for Bob and expose only the public key to Alice</p></li></ol><pre><code class="language-rust code-block">let bob_public_key = {
     let bob_public_key = {
         let bob_private_key =
-            agreement::EphemeralPrivateKey::generate(&agreement::X25519, &rng).unwrap();
+            agreement::EphemeralPrivateKey::generate(&amp;agreement::X25519, &amp;rng).unwrap();
         bob_private_key.compute_public_key().unwrap()
     };
-    agreement::UnparsedPublicKey::new(&agreement::X25519, bob_public_key)
+    agreement::UnparsedPublicKey::new(&amp;agreement::X25519, bob_public_key)
 };</code></pre><ol><li><p>Alice uses her private key and Bob's public key to derive a shared key</p></li></ol><pre><code class="language-rust code-block">agreement::agree_ephemeral(
     my_private_key,
-    &peer_public_key,
+    &amp;peer_public_key,
     ring::error::Unspecified,
     |_key_material| {},
 )
 .unwrap();</code></pre><p>Inside the closure, _key_material represents the shared key resulting from the key agreement. However, it is not recommended to use _key_material directly as the final key. Instead, it is advisable to derive another key by combining _key_material with the public keys of both Alice and Bob. This approach is recommended in <a class="link" href="https://www.rfc-editor.org/rfc/rfc7748" target="_blank">RFC 7748</a> (Section 6.1).</p><blockquote><p>Alice and Bob can then use a key-derivation function that includes K, K_A, and K_B to derive a symmetric key.</p></blockquote><p>Here is a full implementation:</p><pre><code class="language-rust code-block">agreement::agree_ephemeral(
     alice_private_key,
-    &bob_public_key,
+    &amp;bob_public_key,
     ring::error::Unspecified,
     |_key_material| {
         let salt = ring::hkdf::Salt::new(ring::hkdf::HKDF_SHA256, b"test");
         let public_keys = [my_public_key.as_ref(), peer_public_key.bytes().as_ref()];
         let prk = salt.extract(_key_material);
-        let okm = prk.expand(&public_keys, ring::hkdf::HKDF_SHA256).unwrap();
+        let okm = prk.expand(&amp;public_keys, ring::hkdf::HKDF_SHA256).unwrap();
         let mut final_r : [u8;32] = [0; 32];
-        okm.fill(&mut final_r).unwrap();
+        okm.fill(&amp;mut final_r).unwrap();
         Ok(final_r)
     },
 )
@@ -237,12 +237,12 @@ let alice_public_key = my_private_key.compute_public_key().unwrap();</code></pre
                     setBuildTime();
         </script>
         <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0N1753LT3Y"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
-gtag('config', '');
+gtag('config', 'G-0N1753LT3Y');
 </script>
     </div>
 </body>

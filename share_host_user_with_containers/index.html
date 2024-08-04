@@ -103,7 +103,7 @@
     -v="/tmp/host_launcher_fifo:/tmp/host_launcher_fifo" \
     -v /home/${USER}:/home/${USER} \
     -u $(id -u ${USER}):$(id -g ${USER}) \
-    <docker_image></code></pre><p>The solution that maps the host user to a container is useful, but it comes with a significant drawback. When running any commands requiring sudo privilege, such as <code>sudo apt update</code>, it returns an incorrect password error. This is perplexing because the command line has already mounted both the <code>passwd</code> and <code>shadow</code> files, which should contain all the password information.</p><p>If I recall correctly, this solution worked for me a few years ago, but it has failed to work in recent years. I never felt motivated to resolve the issue until today when it became very annoying.</p><p>At first, I tried googling for a solution, but nobody seemed to report the same incorrect password issue. The above solution was deemed as the correct way to map a host user to a container.</p><p>While looking for solutions, I came across <a class="link" href="https://forums.docker.com/t/centos-7-docker-has-sudo-issue-keeps-on-saying-incorrect-sudo-password-on-fedora-35-host-works-on-fedora-34" target="_blank">a forum thread</a> that gave me an idea about the root cause of the problem. The thread's author encountered a similar issue when running a CentOS container on a Fedora host. The explanation given in the thread is that the two distros use different methods to hash passwords. Even if the <code>passwd</code> and <code>shadow</code> files are shared, the container can't create the same hash as the algorithms used are different. In my case, my host is Ubuntu 22.04, and my container is 18.04. I theorized that the root cause of my problem might be the same.</p><p>To verify this quickly, I created a container using Ubuntu 22.04 to match my host OS. As expected, the above solution worked without any issues. Based on this, I modified my solution. First, when creating the Dockerfile, we need to install the sudo tool, add a new user using the same host USER_ID and USERNAME, add the user to the sudo group, and <a class="link" href="https://askubuntu.com/questions/80444/how-to-set-user-passwords-using-passwd-without-a-prompt" target="_blank">set this user's password</a> to the same password used on the host:</p><pre><code class="language-dockerfile code-block">FROM <docker_base_image>
+    &lt;docker_image&gt;</code></pre><p>The solution that maps the host user to a container is useful, but it comes with a significant drawback. When running any commands requiring sudo privilege, such as <code>sudo apt update</code>, it returns an incorrect password error. This is perplexing because the command line has already mounted both the <code>passwd</code> and <code>shadow</code> files, which should contain all the password information.</p><p>If I recall correctly, this solution worked for me a few years ago, but it has failed to work in recent years. I never felt motivated to resolve the issue until today when it became very annoying.</p><p>At first, I tried googling for a solution, but nobody seemed to report the same incorrect password issue. The above solution was deemed as the correct way to map a host user to a container.</p><p>While looking for solutions, I came across <a class="link" href="https://forums.docker.com/t/centos-7-docker-has-sudo-issue-keeps-on-saying-incorrect-sudo-password-on-fedora-35-host-works-on-fedora-34" target="_blank">a forum thread</a> that gave me an idea about the root cause of the problem. The thread's author encountered a similar issue when running a CentOS container on a Fedora host. The explanation given in the thread is that the two distros use different methods to hash passwords. Even if the <code>passwd</code> and <code>shadow</code> files are shared, the container can't create the same hash as the algorithms used are different. In my case, my host is Ubuntu 22.04, and my container is 18.04. I theorized that the root cause of my problem might be the same.</p><p>To verify this quickly, I created a container using Ubuntu 22.04 to match my host OS. As expected, the above solution worked without any issues. Based on this, I modified my solution. First, when creating the Dockerfile, we need to install the sudo tool, add a new user using the same host USER_ID and USERNAME, add the user to the sudo group, and <a class="link" href="https://askubuntu.com/questions/80444/how-to-set-user-passwords-using-passwd-without-a-prompt" target="_blank">set this user's password</a> to the same password used on the host:</p><pre><code class="language-dockerfile code-block">FROM &lt;docker_base_image&gt;
 
 ARG USER_ID=1000
 ARG HOST_USER_PASSWD=111111
@@ -112,7 +112,7 @@ ARG HOST_USERNAME=shiy
 ...
 
 RUN useradd -l -u ${USER_ID} ${HOST_USERNAME}
-RUN usermod -a -G sudo ${HOST_USERNAME} && usermod --password $(echo ${HOST_USER_PASSWD} | openssl passwd -1 -stdin) ${HOST_USERNAME}
+RUN usermod -a -G sudo ${HOST_USERNAME} &amp;&amp; usermod --password $(echo ${HOST_USER_PASSWD} | openssl passwd -1 -stdin) ${HOST_USERNAME}
 
 USER ${HOST_USERNAME}
 WORKDIR /home/${HOST_USERNAME}
@@ -127,7 +127,7 @@ RUN id ${HOST_USERNAME}
     -v /home/$USER:/home/$USER \
     --user=$(id -u):$(id -g)  \
     --group-add="sudo" \
- <docker_image></code></pre><p>Instead, we can specify the current user with the <code>--user</code> argument and add the sudo group using the <code>--group-add</code> argument. This way, the container will use the same host user, and sudo will work as expected. Moreover, any files created within the container can be modified on the host as well.</p></article>
+ &lt;docker_image&gt;</code></pre><p>Instead, we can specify the current user with the <code>--user</code> argument and add the sudo group using the <code>--group-add</code> argument. This way, the container will use the same host user, and sudo will work as expected. Moreover, any files created within the container can be modified on the host as well.</p></article>
             <div class="older_newer_link_section">
                 <div class="older_newer_link_left">
                     <p>
@@ -244,12 +244,12 @@ RUN id ${HOST_USERNAME}
                     setBuildTime();
         </script>
         <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0N1753LT3Y"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
-gtag('config', '');
+gtag('config', 'G-0N1753LT3Y');
 </script>
     </div>
 </body>
