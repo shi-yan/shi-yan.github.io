@@ -576,10 +576,10 @@ code {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 28px;
-    padding: 24px 12px;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 24px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -588,17 +588,21 @@ code {
     flex-direction: column;
     background-color: var(--lighter-card-background-color);
     border-radius: 16px;
-    padding: 18px;
+    padding: 16px;
+    margin: 8px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .gallery-item:hover {
     background-color: var(--card-hover-background-color);
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 10;
 }
 
 .gallery-video-container {
@@ -872,14 +876,14 @@ code {
     
     /* Gallery adjustments */
     .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 16px;
-        padding: 16px 10px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 20px 16px;
     }
     
     .gallery-item {
-        padding: 12px;
-        max-width: 350px;
+        padding: 14px;
+        margin: 6px;
     }
     
     .gallery-video-container {
@@ -1031,13 +1035,13 @@ code {
     /* Gallery mobile */
     .gallery {
         grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 12px 5px;
+        gap: 16px;
+        padding: 16px 12px;
     }
     
     .gallery-item {
-        padding: 10px;
-        max-width: 100%;
+        padding: 12px;
+        margin: 4px;
     }
     
     .gallery-video-container {
